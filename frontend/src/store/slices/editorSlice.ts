@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 
-const API_BASE_URL = `http://${import.meta.env.VITE_BACKEND_URL}:8000`
+const API_BASE_URL = `${import.meta.env.VITE_BACKEND_URL}`
 
 interface EditorState {
   code: string

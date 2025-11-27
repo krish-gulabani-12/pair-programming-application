@@ -11,12 +11,12 @@ export default defineConfig(({ mode }) => {
       port: 3000,
       proxy: {
         '/api': {
-          target: `http://${backendHost}:8000`,
+          target: `${backendHost}`,
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, ''),
         },
         '/ws': {
-          target: `ws://${backendHost}:8000`,
+          target: `ws://${backendHost}`,
           ws: true,
         },
       },

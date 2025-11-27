@@ -6,7 +6,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 
 // API base URL - change this if your backend is on a different port
-const API_BASE_URL = `http://${import.meta.env.VITE_BACKEND_URL}:8000`
+const API_BASE_URL = `${import.meta.env.VITE_BACKEND_URL}`
 
 // Types for room state
 interface RoomState {

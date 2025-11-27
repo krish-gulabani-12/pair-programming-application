@@ -11,7 +11,7 @@ import { setCode, setLanguage, setCursorPosition } from '../store/slices/editorS
 import { updateCodeLocal, setLanguage as setRoomLanguage } from '../store/slices/roomSlice'
 
 // WebSocket base URL
-const WS_BASE_URL = `ws://${import.meta.env.VITE_BACKEND_URL}:8000`
+const WS_BASE_URL = `ws://${import.meta.env.VITE_BACKEND_URL}`
 
 /**
  * Hook to manage WebSocket connection for a room
