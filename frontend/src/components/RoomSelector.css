@@ -1,0 +1,141 @@
+.room-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+}
+
+.room-selector-container {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.room-selector-container h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #4ec9b0;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #858585;
+  margin-bottom: 40px;
+}
+
+.room-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.action-card {
+  background: #252526;
+  border: 1px solid #3e3e42;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: left;
+}
+
+.action-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #d4d4d4;
+}
+
+.action-card p {
+  color: #858585;
+  margin-bottom: 20px;
+}
+
+.join-form {
+  display: flex;
+  gap: 10px;
+}
+
+.room-id-input {
+  flex: 1;
+  padding: 12px;
+  background: #1e1e1e;
+  border: 1px solid #3e3e42;
+  border-radius: 4px;
+  color: #d4d4d4;
+  font-size: 1rem;
+}
+
+.room-id-input:focus {
+  outline: none;
+  border-color: #4ec9b0;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #4ec9b0;
+  color: #1e1e1e;
+  width: 100%;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #3ba899;
+}
+
+.btn-secondary {
+  background: #007acc;
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #005a9e;
+}
+
+.divider {
+  text-align: center;
+  color: #858585;
+  font-weight: 600;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: #3e3e42;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.error-message {
+  margin-top: 20px;
+  padding: 12px;
+  background: #5a1d1d;
+  border: 1px solid #8b2a2a;
+  border-radius: 4px;
+  color: #ff6b6b;
+}
+

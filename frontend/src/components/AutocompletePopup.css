@@ -1,0 +1,171 @@
+.autocomplete-popup {
+  position: fixed;
+  z-index: 1000;
+  background: #252526;
+  border: 1px solid #3e3e42;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  min-width: 280px;
+  max-width: 400px;
+  animation: autocompleteFadeIn 0.2s ease-out;
+  overflow: hidden;
+}
+
+@keyframes autocompleteFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.autocomplete-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: #2d2d30;
+  border-bottom: 1px solid #3e3e42;
+}
+
+.autocomplete-popup-label {
+  color: #4ec9b0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.autocomplete-popup-close {
+  background: transparent;
+  border: none;
+  color: #858585;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.autocomplete-popup-close:hover {
+  background: #3e3e42;
+  color: #d4d4d4;
+}
+
+.autocomplete-popup-content {
+  padding: 12px 14px;
+  background: #1e1e1e;
+}
+
+.autocomplete-popup-suggestion {
+  display: block;
+  color: #4ec9b0;
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  word-break: break-all;
+  background: transparent;
+  padding: 0;
+}
+
+.autocomplete-popup-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: #2d2d30;
+  border-top: 1px solid #3e3e42;
+  gap: 12px;
+}
+
+.autocomplete-popup-hint {
+  flex: 1;
+  color: #858585;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.autocomplete-popup-hint kbd {
+  background: #1e1e1e;
+  border: 1px solid #3e3e42;
+  border-radius: 3px;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  font-family: 'Courier New', monospace;
+  color: #d4d4d4;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.autocomplete-popup-apply {
+  background: #0e639c;
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.autocomplete-popup-apply:hover {
+  background: #1177bb;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.autocomplete-popup-apply:active {
+  transform: translateY(0);
+}
+
+/* Loading state */
+.autocomplete-popup.loading {
+  pointer-events: none;
+}
+
+.autocomplete-popup.loading .autocomplete-popup-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.autocomplete-popup.loading .autocomplete-popup-suggestion {
+  color: #858585;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .autocomplete-popup {
+    min-width: 240px;
+    max-width: 90vw;
+  }
+  
+  .autocomplete-popup-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  
+  .autocomplete-popup-hint {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .autocomplete-popup-apply {
+    width: 100%;
+  }
+}
+
