@@ -91,10 +91,36 @@ const CodeEditor = () => {
     }
   }
 
-  const copyRoomId = () => {
-    if (roomId) {
-      navigator.clipboard.writeText(roomId)
+  const copyRoomId = async () => {
+    if (!roomId) {
+      return
+    }
+
+    const text = roomId
+
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text)
+      } else {
+        const textarea = document.createElement('textarea')
+        textarea.value = text
+        textarea.style.position = 'fixed'
+        textarea.style.opacity = '0'
+        document.body.appendChild(textarea)
+        textarea.focus()
+        textarea.select()
+        const successful = document.execCommand('copy')
+        document.body.removeChild(textarea)
+        if (!successful) {
+          throw new Error('Fallback copy command failed')
+        }
+      }
+
       alert('Room ID copied to clipboard!')
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error('Failed to copy room ID:', err)
+      alert('Unable to copy Room ID. Please copy it manually.')
     }
   }
 
